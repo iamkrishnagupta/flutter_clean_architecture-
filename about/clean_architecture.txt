@@ -1,0 +1,8 @@
+clean architecture is a way to organize your code so that it is easy to understand, test, and maintain. it separates different parts of your code into layers, with each layer having a specific job.
+
+presentation layer: this is the outermost layer. it handles everything related to the user interface (ui). it displays data to the user and captures user input. this layer is responsible for showing screens and managing user interactions.
+
+domain layer (business logic): this layer contains the core business logic of your application. it defines the rules and operations that your app can perform. it is independent of the presentation and data layers, meaning it can be tested and maintained separately. this layer includes use cases that represent specific actions the user can take.
+
+data layer: this layer is responsible for managing data. it handles data storage and retrieval, whether from a local database, an api, or any other data source. the data layer communicates with the domain layer to provide the necessary data for the business logic.
+independence of layers: each layer is independent of the others. changes in one layer (like the user interface) do not affect the other layers (like the data storage). this separation makes the code easier to manage and test.

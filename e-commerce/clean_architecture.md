@@ -1,0 +1,197 @@
+ecommerce_app/
+│
+├── lib/
+│   ├── core/
+│   │   ├── constants/
+│   │   │   ├── api_constants.dart
+│   │   │   └── app_constants.dart
+│   │   ├── errors/
+│   │   │   ├── exceptions.dart
+│   │   │   └── failures.dart
+│   │   ├── network/
+│   │   │   └── network_info.dart
+│   │   ├── usecases/
+│   │   │   └── usecase.dart
+│   │   └── util/
+│   │       ├── input_converter.dart
+│   │       └── currency_formatter.dart
+│   │
+│   ├── features/
+│   │   ├── authentication/
+│   │   │   ├── data/
+│   │   │   │   ├── datasources/
+│   │   │   │   │   ├── auth_local_data_source.dart
+│   │   │   │   │   └── auth_remote_data_source.dart
+│   │   │   │   ├── models/
+│   │   │   │   │   └── user_model.dart
+│   │   │   │   └── repositories/
+│   │   │   │       └── auth_repository_impl.dart
+│   │   │   ├── domain/
+│   │   │   │   ├── entities/
+│   │   │   │   │   └── user.dart
+│   │   │   │   ├── repositories/
+│   │   │   │   │   └── auth_repository.dart
+│   │   │   │   └── usecases/
+│   │   │   │       ├── sign_in.dart
+│   │   │   │       └── sign_up.dart
+│   │   │   └── presentation/
+│   │   │       ├── bloc/
+│   │   │       │   ├── auth_bloc.dart
+│   │   │       │   ├── auth_event.dart
+│   │   │       │   └── auth_state.dart
+│   │   │       ├── pages/
+│   │   │       │   ├── login_page.dart
+│   │   │       │   └── signup_page.dart
+│   │   │       └── widgets/
+│   │   │           ├── login_form.dart
+│   │   │           └── signup_form.dart
+│   │   │
+│   │   ├── product/
+│   │   │   ├── data/
+│   │   │   │   ├── datasources/
+│   │   │   │   │   ├── product_local_data_source.dart
+│   │   │   │   │   └── product_remote_data_source.dart
+│   │   │   │   ├── models/
+│   │   │   │   │   └── product_model.dart
+│   │   │   │   └── repositories/
+│   │   │   │       └── product_repository_impl.dart
+│   │   │   ├── domain/
+│   │   │   │   ├── entities/
+│   │   │   │   │   └── product.dart
+│   │   │   │   ├── repositories/
+│   │   │   │   │   └── product_repository.dart
+│   │   │   │   └── usecases/
+│   │   │   │       ├── get_products.dart
+│   │   │   │       └── search_products.dart
+│   │   │   └── presentation/
+│   │   │       ├── bloc/
+│   │   │       │   ├── product_bloc.dart
+│   │   │       │   ├── product_event.dart
+│   │   │       │   └── product_state.dart
+│   │   │       ├── pages/
+│   │   │       │   ├── product_list_page.dart
+│   │   │       │   └── product_detail_page.dart
+│   │   │       └── widgets/
+│   │   │           ├── product_card.dart
+│   │   │           └── product_search_bar.dart
+│   │   │
+│   │   ├── cart/
+│   │   │   ├── data/
+│   │   │   │   ├── datasources/
+│   │   │   │   │   ├── cart_local_data_source.dart
+│   │   │   │   │   └── cart_remote_data_source.dart
+│   │   │   │   ├── models/
+│   │   │   │   │   └── cart_item_model.dart
+│   │   │   │   └── repositories/
+│   │   │   │       └── cart_repository_impl.dart
+│   │   │   ├── domain/
+│   │   │   │   ├── entities/
+│   │   │   │   │   └── cart_item.dart
+│   │   │   │   ├── repositories/
+│   │   │   │   │   └── cart_repository.dart
+│   │   │   │   └── usecases/
+│   │   │   │       ├── add_to_cart.dart
+│   │   │   │       ├── remove_from_cart.dart
+│   │   │   │       └── get_cart.dart
+│   │   │   └── presentation/
+│   │   │       ├── bloc/
+│   │   │       │   ├── cart_bloc.dart
+│   │   │       │   ├── cart_event.dart
+│   │   │       │   └── cart_state.dart
+│   │   │       ├── pages/
+│   │   │       │   └── cart_page.dart
+│   │   │       └── widgets/
+│   │   │           ├── cart_item_card.dart
+│   │   │           └── cart_total.dart
+│   │   │
+│   │   ├── order/
+│   │   │   ├── data/
+│   │   │   │   ├── datasources/
+│   │   │   │   │   ├── order_local_data_source.dart
+│   │   │   │   │   └── order_remote_data_source.dart
+│   │   │   │   ├── models/
+│   │   │   │   │   └── order_model.dart
+│   │   │   │   └── repositories/
+│   │   │   │       └── order_repository_impl.dart
+│   │   │   ├── domain/
+│   │   │   │   ├── entities/
+│   │   │   │   │   └── order.dart
+│   │   │   │   ├── repositories/
+│   │   │   │   │   └── order_repository.dart
+│   │   │   │   └── usecases/
+│   │   │   │       ├── place_order.dart
+│   │   │   │       └── get_order_history.dart
+│   │   │   └── presentation/
+│   │   │       ├── bloc/
+│   │   │       │   ├── order_bloc.dart
+│   │   │       │   ├── order_event.dart
+│   │   │       │   └── order_state.dart
+│   │   │       ├── pages/
+│   │   │       │   ├── checkout_page.dart
+│   │   │       │   └── order_history_page.dart
+│   │   │       └── widgets/
+│   │   │           ├── order_summary.dart
+│   │   │           └── order_history_item.dart
+│   │   │
+│   │   └── user_profile/
+│   │       ├── data/
+│   │       │   ├── datasources/
+│   │       │   │   ├── profile_local_data_source.dart
+│   │       │   │   └── profile_remote_data_source.dart
+│   │       │   ├── models/
+│   │       │   │   └── profile_model.dart
+│   │       │   └── repositories/
+│   │       │       └── profile_repository_impl.dart
+│   │       ├── domain/
+│   │       │   ├── entities/
+│   │       │   │   └── profile.dart
+│   │       │   ├── repositories/
+│   │       │   │   └── profile_repository.dart
+│   │       │   └── usecases/
+│   │       │       ├── get_profile.dart
+│   │       │       └── update_profile.dart
+│   │       └── presentation/
+│   │           ├── bloc/
+│   │           │   ├── profile_bloc.dart
+│   │           │   ├── profile_event.dart
+│   │           │   └── profile_state.dart
+│   │           ├── pages/
+│   │           │   └── profile_page.dart
+│   │           └── widgets/
+│   │               └── profile_form.dart
+│   │
+│   ├── injection_container.dart
+│   └── main.dart
+│
+├── test/
+│   ├── core/
+│   │   └── network/
+│   │       └── network_info_test.dart
+│   └── features/
+│       ├── authentication/
+│       │   ├── data/
+│       │   │   ├── datasources/
+│       │   │   │   ├── auth_local_data_source_test.dart
+│       │   │   │   └── auth_remote_data_source_test.dart
+│       │   │   ├── models/
+│       │   │   │   └── user_model_test.dart
+│       │   │   └── repositories/
+│       │   │       └── auth_repository_impl_test.dart
+│       │   ├── domain/
+│       │   │   └── usecases/
+│       │   │       ├── sign_in_test.dart
+│       │   │       └── sign_up_test.dart
+│       │   └── presentation/
+│       │       └── bloc/
+│       │           └── auth_bloc_test.dart
+│       ├── product/
+│       │   └── ...
+│       ├── cart/
+│       │   └── ...
+│       ├── order/
+│       │   └── ...
+│       └── user_profile/
+│           └── ...
+│
+├── pubspec.yaml
+└── README.md
